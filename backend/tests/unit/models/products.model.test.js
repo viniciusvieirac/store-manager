@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 const { productsModel } = require('../../../src/models/index');
-const { productsFromDB, oneProductFromDB } = require('../mock/products.mock');
+const { productsFromDB, oneProductFromDB, newProductInDB, newProduct } = require('../mock/products.mock');
 const connection = require('../../../src/models/connection');
 
 describe('Realiza testes products model', function () {
@@ -23,5 +23,12 @@ describe('Realiza testes products model', function () {
 
         expect(product).to.be.instanceOf(Object);
         expect(product.name).to.be.equal(productName);
+    });
+    it('Verifica se é inserido um novo produto', async function () {
+        sinon.stub(connection, 'execute').resolves([{ insertId: 4 }]);
+
+        const product = await productsModel.insert(newProduct);
+
+        expect(product).to.be.deep.equal(newProductInDB);
     });
 });

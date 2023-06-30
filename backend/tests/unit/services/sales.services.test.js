@@ -31,6 +31,6 @@ describe('Realiza testes sales service', function () {
 
     //     expect(products.status).to.be.equal('NOT_FOUND');
     //     expect(products.data).to.haveOwnProperty('message');
-    //     expect(products.data.message).to.be.equal('Sale not found');
+    //     expect(products.data.message).to.be.equal('Sale   not found');
     // });
 });

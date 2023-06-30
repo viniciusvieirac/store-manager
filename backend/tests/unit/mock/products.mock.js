@@ -14,7 +14,23 @@ const oneProductFromDB = {
     name: 'Camisa',
 };
 
+const newProductInDB = {
+    id: 4,
+    name: 'ProdutoX',
+};
+const newProductCreatedSucessful = {
+    status: 'CREATED',
+    data: newProductInDB,
+};
+
+const newProduct = {
+    name: 'ProdutoX',
+};
+
 module.exports = {
     productsFromDB,
     oneProductFromDB,
+    newProductInDB,
+    newProduct,
+    newProductCreatedSucessful,
 };
