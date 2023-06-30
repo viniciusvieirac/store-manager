@@ -24,4 +24,9 @@ describe('Realiza testes sales model', function () {
         expect(product).to.be.instanceOf(Object);
         expect(product.name).to.be.equal(productName);
     });
+    it('Verifica se é adicionado um produto', async function () {
+        sinon.stub(connection, 'execute').resolves([{ insertId: 5 }]);
+        const result = await salesModel.insertSale(5, 3, 15);
+        expect(result).to.be.deep.equal(5);
+    });
 });

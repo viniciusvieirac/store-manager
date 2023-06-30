@@ -29,4 +29,19 @@ describe('Realiza testes sales controller', function () {
         expect(response.status).to.have.been.calledWith(200);
         expect(response.json).to.have.been.calledWith(salesFromDB);
     });
+
+    // it('Verifica se o retorno da função getSaleById no controller é o produto correto', async function () {
+    //     const req = {
+    //         params: { id: 1 },
+    //     };
+    //     const res = {
+    //         status: sinon.stub().returnsThis(),
+    //         json: sinon.stub(),
+    //     };
+
+    //     sinon.stub(salesService, 'findById').resolves(oneSaleFromDB);
+    //     await salesController.getSaleById(req, res);
+    //     expect(res.status).to.have.been.calledWith(200);
+    //     expect(res.json).to.be.have.been.calledWith(oneSaleFromDB);
+    // });
 });
